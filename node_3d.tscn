@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://7v2fj2e6xjx5"]
+[gd_scene load_steps=4 format=3 uid="uid://7v2fj2e6xjx5"]
+
+[ext_resource type="PackedScene" uid="uid://d11x6ncpsdhlr" path="res://character_body_3d.tscn" id="1_8h646"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fvnv6"]
 size = Vector3(2.93127, 0.0915527, 2.2189)
@@ -21,4 +23,6 @@ mesh = SubResource("BoxMesh_55l8y")
 transform = Transform3D(1, 0, 0, 0, -0.936378, 0.350992, 0, -0.350992, -0.936378, 0.170816, 1.81314, -2.36669)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.996048, 0.0649457, 0.0605854, -0.0430335, -0.94961, 0.310465, 0.0776958, 0.306631, 0.948652, 0.170816, 1.81314, 3.24896)
+transform = Transform3D(0.992876, -0.110019, -0.0457566, 0.119154, 0.916362, 0.382209, -0.000120521, -0.384938, 0.922942, 0.170816, 1.81314, 3.24896)
+
+[node name="Scooby" parent="." instance=ExtResource("1_8h646")]

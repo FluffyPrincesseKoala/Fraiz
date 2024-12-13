@@ -1,14 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://d11x6ncpsdhlr"]
+[gd_scene load_steps=4 format=3 uid="uid://d11x6ncpsdhlr"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_a53t5"]
+[ext_resource type="Script" path="res://character_body_3d.gd" id="1_y82pl"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_g3v5k"]
+[sub_resource type="SphereMesh" id="SphereMesh_05ru2"]
 
-[node name="Scooby" type="CharacterBody3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.8, 0, 0, 0, 0.6, 0, 0.899297, 0)
+[sub_resource type="SphereShape3D" id="SphereShape3D_6fuka"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("SphereShape3D_a53t5")
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.605785, 0)
+script = ExtResource("1_y82pl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_g3v5k")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0358152, 0, 0)
+mesh = SubResource("SphereMesh_05ru2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+visibility_parent = NodePath("../MeshInstance3D")
+shape = SubResource("SphereShape3D_6fuka")
