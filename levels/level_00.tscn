@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv2d2cpwp3vs8"]
+[gd_scene load_steps=10 format=3 uid="uid://dv2d2cpwp3vs8"]
 
 [ext_resource type="PackedScene" uid="uid://ce4twf0tmubhv" path="res://characters.tscn" id="1_65e3f"]
 [ext_resource type="Script" path="res://trap_spawner.gd" id="1_vjkn1"]
 [ext_resource type="PackedScene" uid="uid://blcjb0cv4o1xf" path="res://control.tscn" id="2_ovfkk"]
+[ext_resource type="PackedScene" uid="uid://twinbtwr1cx" path="res://character_goal.tscn" id="4_244o8"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_yyt4i"]
 vertices = PackedVector3Array(-19.5, 0.5, -19.5, -19.5, 0.5, -8.25, -8, 0.5, -8.25, -8, 0.5, -19.5, -7, 3, -7.5, -5.25, 3, -5.5, -3, 3, -5.5, -3, 3, -19.5, -7, 3, -19.5, -1.75, 0.5, -6.5, 2, 0.5, -6.25, 2, 0.5, -19.5, -1.75, 0.5, -19.5, 3, 3, -5.5, 5.25, 3, -5.5, 7.25, 3, -7.25, 7, 3, -19.5, 3, 3, -19.5, 8.25, 0.5, -19.5, 8.25, 0.5, -8.25, 19.5, 0.5, -8.25, 19.5, 0.5, -19.5, -4.25, 0.5, -7.75, -4.25, 0.5, -5.5, -3, 0.5, -5.5, -3, 0.5, -19.25, -6.75, 0.5, -19.25, -6.75, 0.5, -8.25, -4.75, 0.5, -8.25, -3, 0.5, -19.25, -4.75, 0.5, -8.25, -4.25, 0.5, -7.75, -3, 0.5, -19.25, 3.25, 0.5, -5.5, 4.5, 0.5, -5.5, 4.75, 0.5, -8.25, 3.25, 0.5, -19.25, 4.75, 0.5, -8.25, 7, 0.5, -8.25, 7, 0.5, -19.25, 3.25, 0.5, -19.25, -5.5, 3, -3, -5.25, 3, -5.5, -7, 3, -7.5, -19.5, 3, -7.25, -19.5, 3, -3, 7.25, 3, -7.25, 5.25, 3, -5.5, 5.5, 3, -3, 19.5, 3, -3, 19.5, 3, -7.25, -5.5, 0.5, -3, -5.5, 0.5, -4.25, -8, 0.5, -4.5, -19.25, 0.5, -3, -19.25, 0.5, -7, -19.25, 0.5, -3, -8, 0.5, -4.5, -8, 0.5, -7, -6.75, 0.5, -7, -6.75, 0.5, -5.5, -5.5, 0.5, -5.5, -5.5, 0.5, -7, 5.75, 0.5, -7, 5.75, 0.5, -5.5, 7, 0.5, -5.5, 7, 0.5, -7, 7.75, 0.5, -4.25, 5.75, 0.5, -4.25, 5.75, 0.5, -3, 19.5, 0.5, -3, 19.5, 0.5, -7, 8.25, 0.5, -7, 8.25, 0.5, -4.75, 19.5, 0.5, -3, 19.5, 0.5, -3, 8.25, 0.5, -4.75, 7.75, 0.5, -4.25, -2.25, 0.5, -4.25, -4.25, 0.5, -4.25, -4.25, 0.5, -2.25, -4.5, 0.5, 2, -4.25, 0.5, 4.5, -2, 0.5, 4.5, 2, 0.5, 4.75, 4.5, 0.5, 4.5, 4.5, 0.5, 2.25, -2, 0.5, 4.5, 4.5, 0.5, -2, 4.5, 0.5, -4.25, 2, 0.5, -4.5, 2, 0.5, -6.25, -1.75, 0.5, -6.5, -1.75, 0.5, -4.75, 2, 0.5, -4.5, 2, 0.5, -4.5, -2.25, 0.5, -4.25, -4.25, 0.5, -2.25, -4.75, 0.5, -1.75, -6.5, 0.5, -1.75, -6.25, 0.5, 2, -4.5, 0.5, 2, -4.25, 0.5, -2.25, -4.5, 0.5, 2, -2, 0.5, 4.5, 4.5, 0.5, 2.25, 4.5, 0.5, -2, 2, 0.5, -4.5, -1.75, 0.5, 6.5, 2, 0.5, 6.5, 2, 0.5, 4.75, -2, 0.5, 4.5, 4.5, 0.5, 2.25, 6.5, 0.5, 2, 6.5, 0.5, -1.75, 4.5, 0.5, -2, 2, 0.5, -4.5, -1.75, 0.5, -4.75, -2.25, 0.5, -4.25, -4.25, 0.5, -2.25, -4.75, 0.5, -1.75, -4.5, 0.5, 2, -6.5, 0.5, -1.75, -19.5, 0.5, -1.75, -19.5, 0.5, 2, -6.25, 0.5, 2, 6.5, 0.5, 2, 19.5, 0.5, 2, 19.5, 0.5, -1.75, 6.5, 0.5, -1.75, -7.25, 3, 7, -5.25, 3, 5.5, -5.5, 3, 3, -19.5, 3, 3, -19.5, 3, 7, 5.5, 3, 3, 5.5, 3, 5.25, 7.25, 3, 7, 19.5, 3, 7, 19.5, 3, 3, -8, 0.5, 4.75, -5.5, 0.5, 4.5, -5.5, 0.5, 3.25, -19.25, 0.5, 3.25, -19.25, 0.5, 7, -8, 0.5, 7, -8, 0.5, 4.75, -19.25, 0.5, 3.25, 5.75, 0.5, 3.25, 5.75, 0.5, 4.5, 8.25, 0.5, 4.75, 19.5, 0.5, 3.25, 8.25, 0.5, 4.75, 8.25, 0.5, 7, 19.5, 0.5, 7, 19.5, 0.5, 3.25, 7.25, 3, 7, 5.5, 3, 5.25, 3, 3, 5.5, 3, 3, 19.5, 7, 3, 19.5, -3, 3, 5.5, -5.25, 3, 5.5, -7.25, 3, 7, -7, 3, 19.5, -3, 3, 19.5, -6.75, 0.5, 5.75, -6.75, 0.5, 7, -5.5, 0.5, 7, -5.5, 0.5, 5.75, -3, 0.5, 5.75, -4.25, 0.5, 5.75, -4.25, 0.5, 7.75, -3, 0.5, 19.25, -4.75, 0.5, 8.25, -6.75, 0.5, 8.25, -6.75, 0.5, 19.25, -3, 0.5, 19.25, -3, 0.5, 19.25, -4.25, 0.5, 7.75, -4.75, 0.5, 8.25, 4.75, 0.5, 8.25, 4.5, 0.5, 5.75, 3.25, 0.5, 5.75, 3.25, 0.5, 19.25, 7, 0.5, 19.25, 7, 0.5, 8.25, 4.75, 0.5, 8.25, 3.25, 0.5, 19.25, 5.75, 0.5, 5.75, 5.75, 0.5, 7, 7, 0.5, 7, 7, 0.5, 5.75, 2, 0.5, 6.5, -1.75, 0.5, 6.5, -1.75, 0.5, 19.5, 2, 0.5, 19.5, -19.5, 0.5, 8.25, -19.5, 0.5, 19.5, -8, 0.5, 19.5, -8, 0.5, 8.25, 8.25, 0.5, 8.25, 8.25, 0.5, 19.5, 19.5, 0.5, 19.5, 19.5, 0.5, 8.25)
@@ -130,35 +131,55 @@ transform = Transform3D(0.7223, 0.522287, -0.45332, -0.0359527, 0.682956, 0.7295
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.999994, -0.00222667, 0.00249233, -0.00300178, -0.270528, 0.962707, -0.00146939, -0.96271, -0.270533, 23, 27, 3.27739)
 
-[node name="char01" parent="." instance=ExtResource("1_65e3f")]
+[node name="superchar01" parent="." instance=ExtResource("1_65e3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.99931, 0, 0)
 
-[node name="Marker3D" parent="char01/CharacterBody3D" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.524, 0, 0)
+[node name="CharacterBody3D" parent="superchar01" index="0" node_paths=PackedStringArray("marker") groups=["characters"]]
+marker = NodePath("../../GoalArea")
 
-[node name="char02" parent="." instance=ExtResource("1_65e3f")]
+[node name="superchar02" parent="." instance=ExtResource("1_65e3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.353656, 0, 4.68901)
 
-[node name="Marker3D" parent="char02/CharacterBody3D" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.093873, 0, 15.2812)
+[node name="CharacterBody3D" parent="superchar02" index="0" node_paths=PackedStringArray("marker") groups=["characters"]]
+marker = NodePath("../../GoalArea2")
 
-[node name="char03" parent="." instance=ExtResource("1_65e3f")]
+[node name="superchar03" parent="." instance=ExtResource("1_65e3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.62996, 0, 0)
 
-[node name="Marker3D" parent="char03/CharacterBody3D" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.9703, 0, 0)
+[node name="CharacterBody3D" parent="superchar03" index="0" node_paths=PackedStringArray("marker") groups=["characters"]]
+marker = NodePath("../../GoalArea3")
 
-[node name="char04" parent="." instance=ExtResource("1_65e3f")]
+[node name="superchar04" parent="." instance=ExtResource("1_65e3f")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.457068, 0, -4.74333)
 
-[node name="Marker3D" parent="char04/CharacterBody3D" index="3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138688, 0, -14.8592)
+[node name="CharacterBody3D" parent="superchar04" index="0" node_paths=PackedStringArray("marker") groups=["characters"]]
+marker = NodePath("../../GoalArea4")
 
 [node name="Control" parent="." instance=ExtResource("2_ovfkk")]
 
-[connection signal="trap_selected" from="Control" to="." method="_on_control_trap_selected"]
+[node name="GoalArea" parent="." instance=ExtResource("4_244o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9156, 0, 0)
 
-[editable path="char01"]
-[editable path="char02"]
-[editable path="char03"]
-[editable path="char04"]
+[node name="GoalArea2" parent="." instance=ExtResource("4_244o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 19.2761)
+
+[node name="GoalArea3" parent="." instance=ExtResource("4_244o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.2736, 0, 0)
+
+[node name="GoalArea4" parent="." instance=ExtResource("4_244o8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -19.5428)
+
+[connection signal="character_death" from="superchar01/CharacterBody3D" to="." method="_on_character_death"]
+[connection signal="character_death" from="superchar02/CharacterBody3D" to="." method="_on_character_death"]
+[connection signal="character_death" from="superchar03/CharacterBody3D" to="." method="_on_character_death"]
+[connection signal="character_death" from="superchar04/CharacterBody3D" to="." method="_on_character_death"]
+[connection signal="trap_selected" from="Control" to="." method="_on_control_trap_selected"]
+[connection signal="on_character_win" from="GoalArea" to="." method="_on_goal_area_on_character_win"]
+[connection signal="on_character_win" from="GoalArea2" to="." method="_on_goal_area_on_character_win"]
+[connection signal="on_character_win" from="GoalArea3" to="." method="_on_goal_area_on_character_win"]
+[connection signal="on_character_win" from="GoalArea4" to="." method="_on_goal_area_on_character_win"]
+
+[editable path="superchar01"]
+[editable path="superchar02"]
+[editable path="superchar03"]
+[editable path="superchar04"]

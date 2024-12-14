@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://twinbtwr1cx"]
+
+[ext_resource type="Script" path="res://character_goal.gd" id="1_tw8g5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bpaht"]
+size = Vector3(4, 25.6781, 4)
+
+[node name="GoalArea" type="Area3D"]
+script = ExtResource("1_tw8g5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.27899, 0)
+shape = SubResource("BoxShape3D_bpaht")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

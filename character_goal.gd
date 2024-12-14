@@ -1,0 +1,20 @@
+extends Area3D
+
+signal on_character_win
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+
+func handleCharacterEntered(body: Node3D):
+	body.call("on_character_win")
+	on_character_win.emit()
+
+func _on_body_entered(body):
+	if body.has_method("on_character_win"):
+		handleCharacterEntered(body)

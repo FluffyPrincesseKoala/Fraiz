@@ -1,6 +1,13 @@
 extends Node3D
 
 signal cannotCreateTrap_tooPoor(trap_id: int)
+signal characters_have_won
+signal characters_have_lost
+
+@export var number_of_characters = 4
+@export var number_of_character_that_need_to_win = 4
+@export var number_of_character_that_won = 0
+@export var number_of_dead_characters = 0
 
 @onready var spike_trap = preload("res://spike.tscn")
 @onready var trap_costs = {
@@ -10,6 +17,7 @@ signal cannotCreateTrap_tooPoor(trap_id: int)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print(trap_costs.get(1))
+	assert(number_of_characters - number_of_character_that_need_to_win >= 0, "Seriously ?")
 	pass # Replace with function body.
 
 func getTrapCost(trap_id: int) -> int:
@@ -36,3 +44,23 @@ func _on_control_trap_selected(trap_type: int, position: Vector3):
 		instanciateTrap(spike_trap.instantiate(), position, trap_type)
 	else:
 		print("oh nooooo!!!")
+
+
+
+func _on_goal_area_on_character_win():
+	number_of_character_that_won += 1
+	print("win !!")
+	if number_of_character_that_won >= number_of_character_that_need_to_win:
+		print("These fuckers survived")
+		characters_have_won.emit()
+		get_tree().quit()
+
+
+
+func _on_character_death():
+	print("death and taxes")
+	number_of_dead_characters += 1
+	if number_of_dead_characters > number_of_characters - number_of_character_that_need_to_win :
+		print("HHAHAHA Blood for the blood god!!!")
+		characters_have_lost.emit()
+		get_tree().quit()

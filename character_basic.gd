@@ -22,9 +22,10 @@ enum DodgeDirection {
 @export var HP: int = 5;
 @export var base_speed: float = 2
 @export var speed: float = base_speed;
+var has_win = false
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D;
-@onready var marker: Marker3D = $Marker3D
+@export var marker: Node3D
 
 func receive_dammage(amount: int):
 	HP -= amount;
@@ -45,12 +46,23 @@ func reset_speed():
 	speed = base_speed;
 
 func _process(delta):
-	if HP <= 0:
+	if HP <= 0 && !has_win:
 		character_death.emit();
 		queue_free()
 
 func take_damage(damage_taken: int):
 	receive_dammage(damage_taken)
+	
+func on_character_win():
+	var disapear_trigger = Timer.new()
+	has_win = true
+	disapear_trigger.autostart = true
+	disapear_trigger.one_shot = true
+	disapear_trigger.wait_time = 0.5
+	disapear_trigger.connect("timeout", func ():
+		queue_free());
+	add_child(disapear_trigger)
+	
 
 func _physics_process(delta):
 	if (GlobalGameState.game_state != GlobalGameState.GameState.STARTED):
@@ -64,8 +76,8 @@ func _physics_process(delta):
 	
 	velocity = velocity.lerp(direction*speed, acceleration * delta);
 	
-	if abs(global_position.distance_to(marker.global_position)) <= 2:
-		velocity = Vector3();
-	print(velocity)
+	#if abs(global_position.distance_to(marker.global_position)) <= 2:
+		#velocity = Vector3();
+	
 		
 	move_and_slide()
