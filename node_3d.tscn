@@ -1,28 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://7v2fj2e6xjx5"]
+[gd_scene load_steps=6 format=3 uid="uid://7v2fj2e6xjx5"]
 
 [ext_resource type="PackedScene" uid="uid://d11x6ncpsdhlr" path="res://character_body_3d.tscn" id="1_8h646"]
+[ext_resource type="PackedScene" uid="uid://f10du2bkhv24" path="res://spike.tscn" id="2_axxtl"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fvnv6"]
-size = Vector3(2.93127, 0.0915527, 2.2189)
+size = Vector3(1, 0.1, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_55l8y"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_wwbo5"]
+
 [node name="Node3D" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="soleeee" type="StaticBody3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.160461, 0.0700853, 0.577823)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="soleeee"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
 shape = SubResource("BoxShape3D_fvnv6")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
-transform = Transform3D(2.97711, 0, 0, 0, 0.130849, 0, 0, 0, 2.28534, 0.159284, 0.062025, 0.512905)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="soleeee"]
+transform = Transform3D(10, 0, 0, 0, 0.1, 0, 0, 0, 10, 0, 0, 0)
 mesh = SubResource("BoxMesh_55l8y")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -0.936378, 0.350992, 0, -0.350992, -0.936378, 0.170816, 1.81314, -2.36669)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.992876, -0.110019, -0.0457566, 0.119154, 0.916362, 0.382209, -0.000120521, -0.384938, 0.922942, 0.170816, 1.81314, 3.24896)
+transform = Transform3D(1, 0, 0, 0, 0.417867, 0.908508, 0, -0.908508, 0.417867, 0, 10, 5)
 
 [node name="Scooby" parent="." instance=ExtResource("1_8h646")]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Scooby"]
+shape = SubResource("SphereShape3D_wwbo5")
+
+[node name="spike" parent="." instance=ExtResource("2_axxtl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="Area3D" parent="spike" index="2"]
+priority = 1
+
+[editable path="spike"]
