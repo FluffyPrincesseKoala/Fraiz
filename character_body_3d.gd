@@ -1,5 +1,18 @@
 extends CharacterBody3D
 
+# cyril test placeholder variable
+var health: int = 100
+
+func take_damage(amount):
+	health -= amount
+	print("Health:", health)
+	if health <= 0:
+		die()
+
+func die():
+	print("Character died!")
+	queue_free()
+
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5

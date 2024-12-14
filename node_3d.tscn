@@ -9,6 +9,8 @@ size = Vector3(2.93127, 0.0915527, 4.67928)
 
 [sub_resource type="BoxMesh" id="BoxMesh_55l8y"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_wwbo5"]
+
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_8jw3v")
 
@@ -16,7 +18,7 @@ script = ExtResource("1_8jw3v")
 
 [node name="Scooby" parent="." instance=ExtResource("1_8h646")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="soleeee" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(3.93162, 0, 0, 0, 1, 0, 0, 0, 1, 0.160461, 0.0700853, 1.80801)
