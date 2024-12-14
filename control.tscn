@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://blcjb0cv4o1xf"]
+
+[ext_resource type="Script" path="res://control.gd" id="1_63rx0"]
+[ext_resource type="Script" path="res://RedButton.gd" id="1_ah87m"]
+[ext_resource type="Script" path="res://BlueButton.gd" id="2_ts6n7"]
+[ext_resource type="Script" path="res://GreenButton.gd" id="3_q1doh"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_51axn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8qg8"]
+albedo_color = Color(1, 0, 0, 1)
+emission = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
+emission_energy_multiplier = 1.1
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_63rx0")
+metadata/trapSelected = 0
+
+[node name="RedButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 547.0
+offset_right = 413.0
+offset_bottom = 591.0
+scale = Vector2(1.90011, 2.1416)
+text = "RED"
+script = ExtResource("1_ah87m")
+
+[node name="TextHover" type="Label" parent="RedButton"]
+visible = false
+layout_mode = 0
+offset_left = 1.05257
+offset_top = -32.2189
+offset_right = 254.053
+offset_bottom = -9.21891
+scale = Vector2(0.975508, 1.40197)
+text = "This button will create a fire trap"
+
+[node name="BlueButton" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 546.0
+offset_right = 533.0
+offset_bottom = 590.0
+scale = Vector2(1.90011, 2.1416)
+text = "BLUE"
+script = ExtResource("2_ts6n7")
+
+[node name="TextHover" type="Label" parent="BlueButton"]
+visible = false
+offset_left = 1.05257
+offset_top = -32.2189
+offset_right = 254.053
+offset_bottom = -9.21891
+scale = Vector2(0.975508, 1.40197)
+text = "This button will create a water trap"
+
+[node name="GreenButton" type="Button" parent="."]
+offset_left = 616.0
+offset_top = 546.0
+offset_right = 663.0
+offset_bottom = 590.0
+scale = Vector2(1.90011, 2.1416)
+text = "VERT
+"
+script = ExtResource("3_q1doh")
+
+[node name="TextHover" type="Label" parent="GreenButton"]
+visible = false
+offset_left = 1.05257
+offset_top = -32.2189
+offset_right = 254.053
+offset_bottom = -9.21891
+scale = Vector2(0.975508, 1.40197)
+text = "This button will create a grass trap"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+unique_name_in_owner = true
+mesh = SubResource("BoxMesh_51axn")
+surface_material_override/0 = SubResource("StandardMaterial3D_c8qg8")

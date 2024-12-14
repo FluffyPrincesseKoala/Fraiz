@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://blcjb0cv4o1xf"]
+
+[ext_resource type="Script" path="res://ButtonPiege.gd" id="1_lsqqb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 367.0
+offset_top = 547.0
+offset_right = 413.0
+offset_bottom = 591.0
+scale = Vector2(1.90011, 2.1416)
+text = "RED"
+script = ExtResource("1_lsqqb")
+
+[node name="Button2" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 546.0
+offset_right = 533.0
+offset_bottom = 590.0
+scale = Vector2(1.90011, 2.1416)
+text = "BLUE"
+
+[node name="Button3" type="Button" parent="."]
+offset_left = 616.0
+offset_top = 546.0
+offset_right = 663.0
+offset_bottom = 590.0
+scale = Vector2(1.90011, 2.1416)
+text = "VERT
+"
