@@ -18,3 +18,9 @@ config/icon="res://icon.svg"
 [autoload]
 
 GlobalVariable="*res://node_3d.gd"
+
+[file_customization]
+
+folder_colors={
+"res://animations/": "yellow"
+}
