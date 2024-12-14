@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://b2gu1pi4brigf"]
+
+[ext_resource type="Script" path="res://character_basic.gd" id="1_k3erl"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_uvpxg"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_bau4q"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_k3erl")
+metadata/TargetPosition = Vector3(0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_uvpxg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_bau4q")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="CharacterBody3D"]
+
+[node name="Marker3D" type="Marker3D" parent="CharacterBody3D"]
