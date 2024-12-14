@@ -49,8 +49,12 @@ func _process(delta):
 		character_death.emit();
 		queue_free()
 
+func take_damage(damage_taken: int):
+	receive_dammage(damage_taken)
+
 func _physics_process(delta):
-	
+	if (GlobalGameState.game_state != GlobalGameState.GameState.STARTED):
+		return
 	var direction = Vector3();
 	var target_position = marker.global_position;
 	
@@ -63,4 +67,5 @@ func _physics_process(delta):
 	if abs(global_position.distance_to(marker.global_position)) <= 2:
 		velocity = Vector3();
 	print(velocity)
+		
 	move_and_slide()

@@ -91,3 +91,5 @@ visible = false
 unique_name_in_owner = true
 mesh = SubResource("BoxMesh_51axn")
 surface_material_override/0 = SubResource("StandardMaterial3D_c8qg8")
+
+[connection signal="trap_selected" from="." to="RedButton" method="_on_control_trap_selected"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://fnyc008hjalf"]
 
-[ext_resource type="PackedScene" uid="uid://b2gu1pi4brigf" path="res://characters.tscn" id="1_3tuyd"]
+[ext_resource type="PackedScene" uid="uid://ce4twf0tmubhv" path="res://characters.tscn" id="1_3tuyd"]
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ii5kv"]
 vertices = PackedVector3Array(1.5, 0.370447, 4.5, 1.5, 0.370447, 3, 1, 0.370447, 2.75, -4.5, 0.370447, 4.5, 1, 0.370447, -2.75, 1.5, 0.370447, -3, 1.5, 0.370447, -4.5, -4.5, 0.370447, -4.5, 1, 0.370447, 2.75, 1, 0.370447, -2.75, -4.5, 0.370447, -4.5, -4.5, 0.370447, 4.5, 3.25, 0.370447, 2.75, 1.5, 0.370447, 3, 1.5, 0.370447, 4.5, 4.5, 0.370447, 4.5, 3.25, 0.370447, -2.75, 3.25, 0.370447, 2.75, 4.5, 0.370447, 4.5, 4.5, 0.370447, -4.5, 1.5, 0.370447, -4.5, 1.5, 0.370447, -3, 3.25, 0.370447, -2.75, 4.5, 0.370447, -4.5)
@@ -45,12 +45,6 @@ shape = SubResource("BoxShape3D_inyda")
 
 [node name="charactzer" parent="." instance=ExtResource("1_3tuyd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03924, 0)
-
-[node name="CharacterBody3D" parent="charactzer" index="0"]
-speed = null
-acceleration = null
-ai_mode = null
-dodge_direction = null
 
 [node name="Marker3D" parent="charactzer/CharacterBody3D" index="3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27364, 0.00401402, 1.9718)

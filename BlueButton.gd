@@ -40,4 +40,5 @@ func set_posTrap():
 			intersection.y = round(intersection.y)
 			intersection.z = round(intersection.z)
 			%StaticBody3D.position = intersection
+			GlobalVariable.trapSelectedPosition = intersection
 
