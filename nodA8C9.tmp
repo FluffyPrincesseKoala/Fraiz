@@ -9,8 +9,6 @@ size = Vector3(2.93127, 0.0915527, 4.67928)
 
 [sub_resource type="BoxMesh" id="BoxMesh_55l8y"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_wwbo5"]
-
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_8jw3v")
 
@@ -18,8 +16,7 @@ script = ExtResource("1_8jw3v")
 
 [node name="Scooby" parent="." instance=ExtResource("1_8h646")]
 
-[node name="soleeee" type="StaticBody3D" parent="."]
-collision_mask = 5
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(3.93162, 0, 0, 0, 1, 0, 0, 0, 1, 0.160461, 0.0700853, 1.80801)
@@ -33,5 +30,5 @@ mesh = SubResource("BoxMesh_55l8y")
 transform = Transform3D(1, 0, 0, 0, -0.936378, 0.350992, 0, -0.350992, -0.936378, 0.170816, 1.81314, -2.36669)
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 8.13666, 3.77979)
+transform = Transform3D(1, 0, 0, 0, 0.883741, 0.467976, 0, -0.467976, 0.883741, 0, 4, 8.20532)
 fov = 90.1

@@ -6,9 +6,10 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_6fuka"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="Scooby" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.605785, 0)
 script = ExtResource("1_y82pl")
+metadata/selectedTrap = 0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0358152, 0, 0)

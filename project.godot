@@ -15,6 +15,16 @@ run/main_scene="res://node_3d.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalVariable="*res://node_3d.gd"
+GlobalGameState="*res://GlobalGameState.gd"
+
+[file_customization]
+
+folder_colors={
+"res://animations/": "yellow"
+}
 [input]
 
 rotate_trap={
