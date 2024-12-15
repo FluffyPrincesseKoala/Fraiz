@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://blcjb0cv4o1xf"]
+[gd_scene load_steps=20 format=3 uid="uid://blcjb0cv4o1xf"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_63rx0"]
 [ext_resource type="Script" path="res://RedButton.gd" id="1_ah87m"]
@@ -17,12 +17,16 @@
 [ext_resource type="Script" path="res://GazButton.gd" id="14_ujyax"]
 [ext_resource type="Script" path="res://ScoobyscuitTNTButton.gd" id="16_3utwe"]
 [ext_resource type="Script" path="res://EnzoPacManButton.gd" id="17_fspc1"]
+[ext_resource type="Script" path="res://Label.gd" id="18_udcdk"]
+[ext_resource type="Texture2D" uid="uid://cjvvlg1dpev1x" path="res://animations/textures/dollar.png" id="19_cbbls"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -1.0
+offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_63rx0")
@@ -282,9 +286,31 @@ expand_mode = 2
 unique_name_in_owner = true
 visible = false
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="MeshSelected"]
+unique_name_in_owner = true
+
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 unique_name_in_owner = true
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 unique_name_in_owner = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 1052.0
+offset_top = 14.0
+offset_right = 1095.0
+offset_bottom = 43.0
+horizontal_alignment = 2
+vertical_alignment = 1
+script = ExtResource("18_udcdk")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+offset_left = 1099.0
+offset_top = 10.0
+offset_right = 1611.0
+offset_bottom = 522.0
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("19_cbbls")
