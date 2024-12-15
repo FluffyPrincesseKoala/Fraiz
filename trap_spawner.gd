@@ -10,6 +10,9 @@ signal characters_have_lost
 @export var number_of_dead_characters = 0
 
 @onready var spike_trap = preload("res://spike.tscn")
+@onready var bumper_trap = preload("res://bumper.tscn")
+@onready var arrow_trap = preload("res://arrow.tscn")
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -25,19 +28,24 @@ func _process(delta):
 	if Input.is_action_just_pressed("start_wave"):
 		GlobalGameState.game_state = GlobalGameState.GameState.STARTED
 
-func instanciateTrap(node: Node3D, position: Vector3, trap_id: int):
+func instanciateTrap(node: Node3D, position: Vector3, rotation: Vector3, trap_id: int):
 	var cost = getTrapCost(trap_id)
 	if GlobalGameState.number_of_coin - cost < 0:
 		cannotCreateTrap_tooPoor.emit(trap_id)
 		print("you poor")
 		return
+	node.rotation = rotation
 	node.global_position = position
 	GlobalGameState.number_of_coin -= cost
 	add_child(node)
 
-func _on_control_trap_selected(trap_type: int, position: Vector3):
+func _on_control_trap_selected(trap_type: int, position: Vector3, rotation: Vector3):
 	if trap_type == 1:
-		instanciateTrap(spike_trap.instantiate(), position, trap_type)
+		instanciateTrap(spike_trap.instantiate(), position, rotation, trap_type)
+	elif trap_type == 2:
+		instanciateTrap(arrow_trap.instantiate(), position, rotation, trap_type)
+	elif trap_type == 4:
+		instanciateTrap(bumper_trap.instantiate(), position, rotation, trap_type)
 	else:
 		print("oh nooooo!!!")
 

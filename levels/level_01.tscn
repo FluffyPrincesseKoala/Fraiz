@@ -98,6 +98,10 @@ script = ExtResource("8_dfenb")
 goals = [NodePath("../GoalArea"), NodePath("../GoalArea2"), NodePath("../GoalArea3"), NodePath("../GoalArea4")]
 characters = [NodePath("../superchar01/CharacterBody3D"), NodePath("../superchar02/CharacterBody3D"), NodePath("../superchar03/CharacterBody3D"), NodePath("../superchar04/CharacterBody3D")]
 
+[connection signal="character_death" from="superchar01/CharacterBody3D" to="." method="_on_character_death"]
+[connection signal="character_death" from="superchar02/CharacterBody3D" to="." method="_on_character_death"]
+[connection signal="character_death" from="superchar03/CharacterBody3D" to="." method="_on_character_death"]
+[connection signal="character_death" from="superchar04/CharacterBody3D" to="." method="_on_character_death"]
 [connection signal="trap_selected" from="Control" to="." method="_on_control_trap_selected"]
 [connection signal="on_character_win" from="GoalArea" to="." method="_on_goal_area_on_character_win"]
 [connection signal="on_character_win" from="GoalArea2" to="." method="_on_goal_area_on_character_win"]
