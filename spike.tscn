@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://f10du2bkhv24"]
+[gd_scene load_steps=5 format=3 uid="uid://dnw6801b85f6r"]
 
-[ext_resource type="PackedScene" uid="uid://djvf63ge6cn7d" path="res://trap_base.tscn" id="1_for51"]
+[ext_resource type="PackedScene" path="res://trap_base.tscn" id="1_for51"]
 [ext_resource type="Script" path="res://spike.gd" id="2_ak7me"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6vvko"]
@@ -24,7 +24,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_xmluc")
 
 [node name="Timer" type="Timer" parent="." index="3"]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -15,18 +15,19 @@ func _process(delta):
 	if (GlobalVariable.trapSelected == 3): 
 		set_posTrap()
 
-
-
 func _pressed():
 	GlobalVariable.trapSelected = 3
-	var mat = %MeshInstance3D.get_surface_override_material(0)
-	mat.albedo_color = Color(0, 1, 0)
-	%MeshInstance3D.set_surface_override_material(0, mat)
+	var gltf_scene = load("res://animations/ice.gltf")
+	if gltf_scene and gltf_scene is PackedScene:
+		var new_gltf_instance = gltf_scene.instantiate()
+		for child in %MeshSelected.get_children():
+			child.queue_free()
+		%MeshSelected.add_child(new_gltf_instance)
 	
 
 func set_posTrap():
 		var plane = Plane(Vector3(0, 1, 0), 1)
-		%StaticBody3D.visible = true
+		%MeshSelected.visible = true
 		var mouse_pos = get_viewport().get_mouse_position()
 		var camera = get_viewport().get_camera_3d()
 		if camera:
@@ -41,5 +42,5 @@ func set_posTrap():
 			intersection.x = round(intersection.x)
 			intersection.y = round(intersection.y)
 			intersection.z = round(intersection.z)
-			%StaticBody3D.position = intersection
 			GlobalVariable.trapSelectedPosition = intersection
+			%MeshSelected.position = intersection
