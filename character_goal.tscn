@@ -13,7 +13,6 @@ albedo_color = Color(0.364706, 1, 1, 0.470588)
 material = SubResource("StandardMaterial3D_8qny5")
 
 [node name="GoalArea" type="Area3D"]
-collision_layer = 2
 script = ExtResource("1_tw8g5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

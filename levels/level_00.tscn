@@ -22,7 +22,7 @@ size = Vector3(5, 1, 15)
 [sub_resource type="BoxShape3D" id="BoxShape3D_bn2ye"]
 size = Vector3(5, 2.5, 5)
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 script = ExtResource("1_vjkn1")
 
 [node name="environment" type="NavigationRegion3D" parent="."]
@@ -127,6 +127,7 @@ shape = SubResource("BoxShape3D_bn2ye")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.7223, 0.522287, -0.45332, -0.0359527, 0.682956, 0.729574, 0.690645, -0.510673, 0.512077, -17.1248, 17.9485, 17.0666)
+current = true
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.999994, -0.00222667, 0.00249233, -0.00300178, -0.270528, 0.962707, -0.00146939, -0.96271, -0.270533, 23, 27, 3.27739)

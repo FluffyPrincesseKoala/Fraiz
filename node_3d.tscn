@@ -2,17 +2,17 @@
 
 [ext_resource type="PackedScene" uid="uid://d11x6ncpsdhlr" path="res://character_body_3d.tscn" id="1_8h646"]
 [ext_resource type="Script" path="res://node_3d.gd" id="1_8jw3v"]
-[ext_resource type="PackedScene" uid="uid://f10du2bkhv24" path="res://spike.tscn" id="2_axxtl"]
-[ext_resource type="PackedScene" path="res://control.tscn" id="2_yx8bp"]
-[ext_resource type="PackedScene" uid="uid://dhqen526b166y" path="res://arrow.tscn" id="5_aexy5"]
-[ext_resource type="PackedScene" uid="uid://8ri55c1iuu4b" path="res://bumper.tscn" id="6_pl3au"]
+[ext_resource type="PackedScene" uid="uid://dnw6801b85f6r" path="res://spike.tscn" id="2_axxtl"]
+[ext_resource type="PackedScene" uid="uid://blcjb0cv4o1xf" path="res://control.tscn" id="2_yx8bp"]
+[ext_resource type="PackedScene" path="res://arrow.tscn" id="5_aexy5"]
+[ext_resource type="PackedScene" path="res://bumper.tscn" id="6_pl3au"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fvnv6"]
 size = Vector3(2.93127, 0.0915527, 4.67928)
 
 [sub_resource type="BoxMesh" id="BoxMesh_55l8y"]
 
-[node name="Node3D" type="Node3D"]
+[node name="Node3D2" type="Node3D"]
 script = ExtResource("1_8jw3v")
 
 [node name="Control" parent="." instance=ExtResource("2_yx8bp")]

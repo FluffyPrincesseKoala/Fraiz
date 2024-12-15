@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 GlobalVariable="*res://trap_variables.gd"
 GlobalGameState="*res://GlobalGameState.gd"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+
 [file_customization]
 
 folder_colors={

@@ -57,6 +57,7 @@ func _on_goal_area_on_character_win():
 	if number_of_character_that_won >= number_of_character_that_need_to_win:
 		print("These fuckers survived")
 		characters_have_won.emit()
+		GlobalGameState.game_state = GlobalGameState.GameState.PRE_WAVE
 		get_tree().change_scene_to_file("res://LostMenu.tscn")
 
 
@@ -67,4 +68,6 @@ func _on_character_death():
 	if number_of_dead_characters > number_of_characters - number_of_character_that_need_to_win :
 		print("HHAHAHA Blood for the blood god!!!")
 		characters_have_lost.emit()
+		GlobalGameState.game_state = GlobalGameState.GameState.PRE_WAVE
 		get_tree().change_scene_to_file("res://WonMenu.tscn")
+		
