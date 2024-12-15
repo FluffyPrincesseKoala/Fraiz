@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhqen526b166y"]
+
+[ext_resource type="PackedScene" uid="uid://djvf63ge6cn7d" path="res://trap_base.tscn" id="1_x4666"]
+[ext_resource type="Script" path="res://arrow.gd" id="2_7yc7c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4s1j4"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_pikjn"]
+size = Vector3(3, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8x2g4"]
+size = Vector3(3, 1, 1)
+
+[node name="arrow" instance=ExtResource("1_x4666")]
+script = ExtResource("2_7yc7c")
+range = Vector3(3, 1, 1)
+damage_per_tick = 5
+tick_interval = 0.5
+
+[node name="dangerZone" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_4s1j4")
+transparency = 0.65
+mesh = SubResource("BoxMesh_pikjn")
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+shape = SubResource("BoxShape3D_8x2g4")
+
+[node name="Timer" type="Timer" parent="." index="3"]
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_body_exited"]

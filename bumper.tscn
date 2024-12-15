@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://8ri55c1iuu4b"]
+
+[ext_resource type="PackedScene" uid="uid://djvf63ge6cn7d" path="res://trap_base.tscn" id="1_e8aje"]
+[ext_resource type="Script" path="res://bumper.gd" id="2_umvgy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tcjf"]
+albedo_color = Color(1, 0.0352941, 1, 1)
+emission = Color(1, 0.901961, 1, 1)
+emission_energy_multiplier = 10.0
+emission_on_uv2 = true
+
+[sub_resource type="PrismMesh" id="PrismMesh_3jnsr"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_20jqs"]
+
+[node name="bumper" instance=ExtResource("1_e8aje")]
+script = ExtResource("2_umvgy")
+force_strength = 10.0
+upward_strength = 2.0
+
+[node name="direction" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.1, 0, 0.5, -4.37114e-09, 0, 1, 0.25)
+material_override = SubResource("StandardMaterial3D_4tcjf")
+mesh = SubResource("PrismMesh_3jnsr")
+
+[node name="Area3D" type="Area3D" parent="." index="2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_20jqs")
+
+[connection signal="body_entered" from="Area3D" to="." method="activate_trap"]

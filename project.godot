@@ -25,6 +25,7 @@ GlobalGameState="*res://GlobalGameState.gd"
 folder_colors={
 "res://animations/": "yellow"
 }
+
 [input]
 
 rotate_trap={
