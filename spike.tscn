@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnw6801b85f6r"]
+[gd_scene load_steps=6 format=3 uid="uid://dnw6801b85f6r"]
 
-[ext_resource type="PackedScene" path="res://trap_base.tscn" id="1_for51"]
+[ext_resource type="PackedScene" uid="uid://cp8spgna5jcpp" path="res://trap_base.tscn" id="1_for51"]
 [ext_resource type="Script" path="res://spike.gd" id="2_ak7me"]
+[ext_resource type="PackedScene" uid="uid://byh0kd362ljtm" path="res://animations/Spike1.gltf" id="3_eij8c"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6vvko"]
 
@@ -10,19 +11,25 @@
 [node name="spike" instance=ExtResource("1_for51")]
 script = ExtResource("2_ak7me")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+[node name="Spike1" parent="." index="0" instance=ExtResource("3_eij8c")]
+transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 1, 0, 0.505743, 0)
+
+[node name="baseZone" parent="." index="1"]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="2"]
 collision_layer = 2
 
 [node name="spikesCollision" type="CollisionShape3D" parent="StaticBody3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_6vvko")
 
-[node name="Area3D" type="Area3D" parent="." index="2"]
+[node name="Area3D" type="Area3D" parent="." index="3"]
 
 [node name="activationZone" type="CollisionShape3D" parent="Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_xmluc")
 
-[node name="Timer" type="Timer" parent="." index="3"]
+[node name="Timer" type="Timer" parent="." index="4"]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

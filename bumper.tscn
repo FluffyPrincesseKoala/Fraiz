@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://8ri55c1iuu4b"]
+[gd_scene load_steps=7 format=3 uid="uid://dm5r5vpadl6fm"]
 
-[ext_resource type="PackedScene" uid="uid://djvf63ge6cn7d" path="res://trap_base.tscn" id="1_e8aje"]
+[ext_resource type="PackedScene" uid="uid://cp8spgna5jcpp" path="res://trap_base.tscn" id="1_e8aje"]
 [ext_resource type="Script" path="res://bumper.gd" id="2_umvgy"]
+[ext_resource type="PackedScene" uid="uid://dhdm46euqb7o" path="res://animations/bump.gltf" id="3_bonhg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tcjf"]
 albedo_color = Color(1, 0.0352941, 1, 1)
@@ -18,12 +19,18 @@ script = ExtResource("2_umvgy")
 force_strength = 10.0
 upward_strength = 2.0
 
-[node name="direction" type="MeshInstance3D" parent="." index="1"]
+[node name="baseZone" parent="." index="0"]
+visible = false
+
+[node name="bump" parent="." index="1" instance=ExtResource("3_bonhg")]
+transform = Transform3D(0.79, 0, 0, 0, 0.79, 0, 0, 0, 0.79, 0, 0, 0)
+
+[node name="direction" type="MeshInstance3D" parent="." index="2"]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.1, 0, 0.5, -4.37114e-09, 0, 1, 0.25)
 material_override = SubResource("StandardMaterial3D_4tcjf")
 mesh = SubResource("PrismMesh_3jnsr")
 
-[node name="Area3D" type="Area3D" parent="." index="2"]
+[node name="Area3D" type="Area3D" parent="." index="3"]
 collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]

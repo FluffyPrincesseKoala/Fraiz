@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://node_3d.gd" id="1_8jw3v"]
 [ext_resource type="PackedScene" uid="uid://dnw6801b85f6r" path="res://spike.tscn" id="2_axxtl"]
 [ext_resource type="PackedScene" uid="uid://blcjb0cv4o1xf" path="res://control.tscn" id="2_yx8bp"]
-[ext_resource type="PackedScene" path="res://arrow.tscn" id="5_aexy5"]
+[ext_resource type="PackedScene" uid="uid://c4dv8m3fouu5i" path="res://arrow.tscn" id="5_aexy5"]
 [ext_resource type="PackedScene" path="res://bumper.tscn" id="6_pl3au"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fvnv6"]

@@ -7,6 +7,7 @@ func _ready():
 	$Area3D.body_entered.connect(self._on_area_3d_body_entered)
 	$Area3D.body_exited.connect(self._on_area_3d_body_exited)  # Connect for body exit
 	$Timer.timeout.connect(self.reset_trap)
+	
 
 # Handle body entering the trap
 func _on_area_3d_body_entered(body):
