@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://blcjb0cv4o1xf"]
+[gd_scene load_steps=21 format=3 uid="uid://blcjb0cv4o1xf"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_63rx0"]
 [ext_resource type="Script" path="res://RedButton.gd" id="1_ah87m"]
@@ -19,6 +19,10 @@
 [ext_resource type="Script" path="res://EnzoPacManButton.gd" id="17_fspc1"]
 [ext_resource type="Script" path="res://Label.gd" id="18_udcdk"]
 [ext_resource type="Texture2D" uid="uid://cjvvlg1dpev1x" path="res://animations/textures/dollar.png" id="19_cbbls"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s8mce"]
+line_spacing = -8.96
+font_color = Color(0, 1, 0, 1)
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -58,6 +62,31 @@ offset_right = 64.0
 offset_bottom = 52.0
 texture = ExtResource("3_ki5et")
 expand_mode = 2
+
+[node name="Price" type="Label" parent="SpikeButton"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 38.0
+offset_right = 47.0
+offset_bottom = 61.0
+text = "4"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Coin" type="TextureRect" parent="SpikeButton/Price"]
+offset_left = 41.0
+offset_top = 7.0
+offset_right = 553.0
+offset_bottom = 519.0
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("19_cbbls")
+
+[node name="NumberAvailable" type="Label" parent="SpikeButton"]
+layout_mode = 0
+offset_right = 42.0
+offset_bottom = 23.0
+text = "1"
+label_settings = SubResource("LabelSettings_s8mce")
 
 [node name="ArrowButton" type="Button" parent="."]
 layout_mode = 0
