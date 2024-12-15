@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvj4cm3j6hu3u"]
+
+[ext_resource type="FontFile" uid="uid://bdv2bf3x62vcj" path="res://animations/font/Kaira.ttf" id="1_h82is"]
+[ext_resource type="Script" path="res://RetryButton.gd" id="2_wl0li"]
+[ext_resource type="Script" path="res://QuitButton.gd" id="3_xvnvy"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_f1hfo"]
+font = ExtResource("1_h82is")
+font_size = 150
+font_color = Color(1, 0.517647, 0, 1)
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[node name="LostMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 264.0
+offset_top = 155.0
+offset_right = 925.0
+offset_bottom = 321.0
+text = "You lost"
+label_settings = SubResource("LabelSettings_f1hfo")
+
+[node name="RetryButton" type="Button" parent="."]
+offset_left = 485.0
+offset_top = 365.0
+offset_right = 645.0
+offset_bottom = 428.0
+text = "Retry ?"
+script = ExtResource("2_wl0li")
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 485.0
+offset_top = 452.0
+offset_right = 645.0
+offset_bottom = 515.0
+text = "QUIT"
+script = ExtResource("3_xvnvy")
