@@ -10,19 +10,15 @@ signal characters_have_lost
 @export var number_of_dead_characters = 0
 
 @onready var spike_trap = preload("res://spike.tscn")
-@onready var trap_costs = {
-	1: 5,
-}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(trap_costs.get(1))
 	assert(number_of_characters - number_of_character_that_need_to_win >= 0, "Seriously ?")
 	pass # Replace with function body.
 
 func getTrapCost(trap_id: int) -> int:
-	assert(trap_costs.has(trap_id), "fuck...")
-	return trap_costs[trap_id]
+	assert(GlobalGameState.trap_costs.has(trap_id), "fuck...")
+	return GlobalGameState.trap_costs[trap_id]
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

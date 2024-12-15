@@ -1,6 +1,6 @@
 [gd_scene load_steps=21 format=3 uid="uid://blcjb0cv4o1xf"]
 
-[ext_resource type="Script" path="res://control.gd" id="1_63rx0"]
+[ext_resource type="Script" path="res://trapGameUI.gd" id="1_3dasp"]
 [ext_resource type="Script" path="res://RedButton.gd" id="1_ah87m"]
 [ext_resource type="Script" path="res://BlueButton.gd" id="2_ts6n7"]
 [ext_resource type="Texture2D" uid="uid://bjrfoecvn0e1m" path="res://animations/textures/spike.png" id="3_ki5et"]
@@ -33,7 +33,7 @@ offset_left = -1.0
 offset_right = -1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_63rx0")
+script = ExtResource("1_3dasp")
 metadata/trapSelected = 0
 
 [node name="SpikeButton" type="Button" parent="."]
@@ -74,6 +74,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="Coin" type="TextureRect" parent="SpikeButton/Price"]
+layout_mode = 0
 offset_left = 41.0
 offset_top = 7.0
 offset_right = 553.0
@@ -107,6 +108,7 @@ scale = Vector2(0.975508, 1.40197)
 text = "This button will create a water trap"
 
 [node name="TextureRect" type="TextureRect" parent="ArrowButton"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = 6.0
 offset_right = 64.0
@@ -133,6 +135,7 @@ scale = Vector2(0.975508, 1.40197)
 text = "This button will create a grass trap"
 
 [node name="TextureRect" type="TextureRect" parent="IceButton"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = -5.0
 offset_right = 74.0
@@ -141,6 +144,7 @@ texture = ExtResource("7_l7jkf")
 expand_mode = 2
 
 [node name="BumperButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 434.0
 offset_top = 579.0
 offset_right = 494.0
@@ -158,6 +162,7 @@ scale = Vector2(0.975508, 1.40197)
 text = "This button will create a grass trap"
 
 [node name="TextureRect" type="TextureRect" parent="BumperButton"]
+layout_mode = 0
 offset_left = -52.0
 offset_top = -48.0
 offset_right = 115.0
@@ -166,6 +171,7 @@ texture = ExtResource("8_axtqt")
 expand_mode = 2
 
 [node name="ElecButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 501.0
 offset_top = 579.0
 offset_right = 561.0
@@ -183,6 +189,7 @@ scale = Vector2(0.975508, 1.40197)
 text = "This button will create a grass trap"
 
 [node name="TextureRect" type="TextureRect" parent="ElecButton"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = -5.0
 offset_right = 76.0
@@ -191,6 +198,7 @@ texture = ExtResource("9_ytyvc")
 expand_mode = 2
 
 [node name="LavaButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 569.0
 offset_top = 579.0
 offset_right = 629.0
@@ -208,6 +216,7 @@ scale = Vector2(0.975508, 1.40197)
 text = "This button will create a grass trap"
 
 [node name="TextureRect" type="TextureRect" parent="LavaButton"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = -5.0
 offset_right = 76.0
@@ -216,6 +225,7 @@ texture = ExtResource("10_2hwx0")
 expand_mode = 2
 
 [node name="GazButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 637.0
 offset_top = 580.0
 offset_right = 697.0
@@ -233,6 +243,7 @@ scale = Vector2(0.975508, 1.40197)
 text = "This button will create a grass trap"
 
 [node name="TextureRect" type="TextureRect" parent="GazButton"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = -5.0
 offset_right = 79.0
@@ -241,6 +252,7 @@ texture = ExtResource("11_y0lkg")
 expand_mode = 2
 
 [node name="ScoobyscuitTNTButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 706.0
 offset_top = 580.0
 offset_right = 766.0
@@ -258,6 +270,7 @@ scale = Vector2(0.975508, 1.40197)
 text = "This button will create a grass trap"
 
 [node name="TextureRect" type="TextureRect" parent="ScoobyscuitTNTButton"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = -5.0
 offset_right = 62.0
@@ -265,6 +278,7 @@ offset_bottom = 50.0
 expand_mode = 2
 
 [node name="EnzoPacManButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 774.0
 offset_top = 580.0
 offset_right = 834.0
@@ -282,6 +296,7 @@ scale = Vector2(0.975508, 1.40197)
 text = "This button will create a grass trap"
 
 [node name="TextureRect" type="TextureRect" parent="EnzoPacManButton"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = -5.0
 offset_right = 62.0
@@ -289,6 +304,7 @@ offset_bottom = 50.0
 expand_mode = 2
 
 [node name="EOUIAIOUOUIIIAButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 841.0
 offset_top = 580.0
 offset_right = 901.0
@@ -305,6 +321,7 @@ scale = Vector2(0.975508, 1.40197)
 text = "This button will create a grass trap"
 
 [node name="TextureRect" type="TextureRect" parent="EOUIAIOUOUIIIAButton"]
+layout_mode = 0
 offset_left = -16.0
 offset_top = -4.0
 offset_right = 62.0
@@ -324,10 +341,6 @@ visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 unique_name_in_owner = true
-mesh = SubResource("BoxMesh_51axn")
-surface_material_override/0 = SubResource("StandardMaterial3D_c8qg8")
-
-[connection signal="trap_selected" from="." to="RedButton" method="_on_control_trap_selected"]
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2
