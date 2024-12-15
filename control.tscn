@@ -1,16 +1,22 @@
-[gd_scene load_steps=7 format=3 uid="uid://blcjb0cv4o1xf"]
+[gd_scene load_steps=18 format=3 uid="uid://blcjb0cv4o1xf"]
 
 [ext_resource type="Script" path="res://control.gd" id="1_63rx0"]
 [ext_resource type="Script" path="res://RedButton.gd" id="1_ah87m"]
 [ext_resource type="Script" path="res://BlueButton.gd" id="2_ts6n7"]
+[ext_resource type="Texture2D" uid="uid://bjrfoecvn0e1m" path="res://animations/textures/spike.png" id="3_ki5et"]
 [ext_resource type="Script" path="res://GreenButton.gd" id="3_q1doh"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_51axn"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c8qg8"]
-albedo_color = Color(1, 0, 0, 1)
-emission = Color(0.84956, 3.29696e-06, 1.54018e-06, 1)
-emission_energy_multiplier = 1.1
+[ext_resource type="Texture2D" uid="uid://beygmfbkg6i1f" path="res://animations/textures/arrow.png" id="5_pxtgo"]
+[ext_resource type="Texture2D" uid="uid://b65fvf0uyfavg" path="res://animations/textures/ice.png" id="7_l7jkf"]
+[ext_resource type="Texture2D" uid="uid://cvttsxc7qq5aa" path="res://animations/textures/bumper.png" id="8_axtqt"]
+[ext_resource type="Script" path="res://BumperButton.gd" id="8_rgj5p"]
+[ext_resource type="Texture2D" uid="uid://c0dwe5jr7kmxv" path="res://animations/textures/elec.png" id="9_ytyvc"]
+[ext_resource type="Texture2D" uid="uid://bkajc7mt7tlyb" path="res://animations/textures/lava.png" id="10_2hwx0"]
+[ext_resource type="Script" path="res://ElecButton.gd" id="10_p4a77"]
+[ext_resource type="Texture2D" uid="uid://tcuprbjbuqui" path="res://animations/textures/gaz.png" id="11_y0lkg"]
+[ext_resource type="Script" path="res://LavaButton.gd" id="12_ybl8u"]
+[ext_resource type="Script" path="res://GazButton.gd" id="14_ujyax"]
+[ext_resource type="Script" path="res://ScoobyscuitTNTButton.gd" id="16_3utwe"]
+[ext_resource type="Script" path="res://EnzoPacManButton.gd" id="17_fspc1"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -22,17 +28,15 @@ grow_vertical = 2
 script = ExtResource("1_63rx0")
 metadata/trapSelected = 0
 
-[node name="RedButton" type="Button" parent="."]
+[node name="SpikeButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 367.0
-offset_top = 547.0
-offset_right = 413.0
-offset_bottom = 591.0
-scale = Vector2(1.90011, 2.1416)
-text = "RED"
+offset_left = 233.0
+offset_top = 579.0
+offset_right = 293.0
+offset_bottom = 639.0
 script = ExtResource("1_ah87m")
 
-[node name="TextHover" type="Label" parent="RedButton"]
+[node name="TextHover" type="Label" parent="SpikeButton"]
 visible = false
 layout_mode = 0
 offset_left = 1.05257
@@ -42,17 +46,24 @@ offset_bottom = -9.21891
 scale = Vector2(0.975508, 1.40197)
 text = "This button will create a fire trap"
 
-[node name="BlueButton" type="Button" parent="."]
+[node name="TextureRect" type="TextureRect" parent="SpikeButton"]
 layout_mode = 0
-offset_left = 484.0
-offset_top = 546.0
-offset_right = 533.0
-offset_bottom = 590.0
-scale = Vector2(1.90011, 2.1416)
-text = "BLUE"
+offset_left = -7.0
+offset_top = 3.0
+offset_right = 64.0
+offset_bottom = 52.0
+texture = ExtResource("3_ki5et")
+expand_mode = 2
+
+[node name="ArrowButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 300.0
+offset_top = 579.0
+offset_right = 360.0
+offset_bottom = 639.0
 script = ExtResource("2_ts6n7")
 
-[node name="TextHover" type="Label" parent="BlueButton"]
+[node name="TextHover" type="Label" parent="ArrowButton"]
 visible = false
 layout_mode = 0
 offset_left = 1.05257
@@ -62,18 +73,23 @@ offset_bottom = -9.21891
 scale = Vector2(0.975508, 1.40197)
 text = "This button will create a water trap"
 
-[node name="GreenButton" type="Button" parent="."]
+[node name="TextureRect" type="TextureRect" parent="ArrowButton"]
+offset_left = -16.0
+offset_top = 6.0
+offset_right = 64.0
+offset_bottom = 59.0
+texture = ExtResource("5_pxtgo")
+expand_mode = 2
+
+[node name="IceButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 616.0
-offset_top = 546.0
-offset_right = 663.0
-offset_bottom = 590.0
-scale = Vector2(1.90011, 2.1416)
-text = "VERT
-"
+offset_left = 367.0
+offset_top = 579.0
+offset_right = 427.0
+offset_bottom = 639.0
 script = ExtResource("3_q1doh")
 
-[node name="TextHover" type="Label" parent="GreenButton"]
+[node name="TextHover" type="Label" parent="IceButton"]
 visible = false
 layout_mode = 0
 offset_left = 1.05257
@@ -83,11 +99,192 @@ offset_bottom = -9.21891
 scale = Vector2(0.975508, 1.40197)
 text = "This button will create a grass trap"
 
+[node name="TextureRect" type="TextureRect" parent="IceButton"]
+offset_left = -16.0
+offset_top = -5.0
+offset_right = 74.0
+offset_bottom = 68.0
+texture = ExtResource("7_l7jkf")
+expand_mode = 2
+
+[node name="BumperButton" type="Button" parent="."]
+offset_left = 434.0
+offset_top = 579.0
+offset_right = 494.0
+offset_bottom = 639.0
+script = ExtResource("8_rgj5p")
+
+[node name="TextHover" type="Label" parent="BumperButton"]
+visible = false
+layout_mode = 0
+offset_left = 1.05257
+offset_top = -32.2189
+offset_right = 254.053
+offset_bottom = -9.21891
+scale = Vector2(0.975508, 1.40197)
+text = "This button will create a grass trap"
+
+[node name="TextureRect" type="TextureRect" parent="BumperButton"]
+offset_left = -52.0
+offset_top = -48.0
+offset_right = 115.0
+offset_bottom = 86.0
+texture = ExtResource("8_axtqt")
+expand_mode = 2
+
+[node name="ElecButton" type="Button" parent="."]
+offset_left = 501.0
+offset_top = 579.0
+offset_right = 561.0
+offset_bottom = 639.0
+script = ExtResource("10_p4a77")
+
+[node name="TextHover" type="Label" parent="ElecButton"]
+visible = false
+layout_mode = 0
+offset_left = 1.05257
+offset_top = -32.2189
+offset_right = 254.053
+offset_bottom = -9.21891
+scale = Vector2(0.975508, 1.40197)
+text = "This button will create a grass trap"
+
+[node name="TextureRect" type="TextureRect" parent="ElecButton"]
+offset_left = -16.0
+offset_top = -5.0
+offset_right = 76.0
+offset_bottom = 58.0
+texture = ExtResource("9_ytyvc")
+expand_mode = 2
+
+[node name="LavaButton" type="Button" parent="."]
+offset_left = 569.0
+offset_top = 579.0
+offset_right = 629.0
+offset_bottom = 639.0
+script = ExtResource("12_ybl8u")
+
+[node name="TextHover" type="Label" parent="LavaButton"]
+visible = false
+layout_mode = 0
+offset_left = 1.05257
+offset_top = -32.2189
+offset_right = 254.053
+offset_bottom = -9.21891
+scale = Vector2(0.975508, 1.40197)
+text = "This button will create a grass trap"
+
+[node name="TextureRect" type="TextureRect" parent="LavaButton"]
+offset_left = -16.0
+offset_top = -5.0
+offset_right = 76.0
+offset_bottom = 69.0
+texture = ExtResource("10_2hwx0")
+expand_mode = 2
+
+[node name="GazButton" type="Button" parent="."]
+offset_left = 637.0
+offset_top = 580.0
+offset_right = 697.0
+offset_bottom = 640.0
+script = ExtResource("14_ujyax")
+
+[node name="TextHover" type="Label" parent="GazButton"]
+visible = false
+layout_mode = 0
+offset_left = 1.05257
+offset_top = -32.2189
+offset_right = 254.053
+offset_bottom = -9.21891
+scale = Vector2(0.975508, 1.40197)
+text = "This button will create a grass trap"
+
+[node name="TextureRect" type="TextureRect" parent="GazButton"]
+offset_left = -16.0
+offset_top = -5.0
+offset_right = 79.0
+offset_bottom = 56.0
+texture = ExtResource("11_y0lkg")
+expand_mode = 2
+
+[node name="ScoobyscuitTNTButton" type="Button" parent="."]
+offset_left = 706.0
+offset_top = 580.0
+offset_right = 766.0
+offset_bottom = 640.0
+script = ExtResource("16_3utwe")
+
+[node name="TextHover" type="Label" parent="ScoobyscuitTNTButton"]
+visible = false
+layout_mode = 0
+offset_left = 1.05257
+offset_top = -32.2189
+offset_right = 254.053
+offset_bottom = -9.21891
+scale = Vector2(0.975508, 1.40197)
+text = "This button will create a grass trap"
+
+[node name="TextureRect" type="TextureRect" parent="ScoobyscuitTNTButton"]
+offset_left = -16.0
+offset_top = -5.0
+offset_right = 62.0
+offset_bottom = 50.0
+expand_mode = 2
+
+[node name="EnzoPacManButton" type="Button" parent="."]
+offset_left = 774.0
+offset_top = 580.0
+offset_right = 834.0
+offset_bottom = 640.0
+script = ExtResource("17_fspc1")
+
+[node name="TextHover" type="Label" parent="EnzoPacManButton"]
+visible = false
+layout_mode = 0
+offset_left = 1.05257
+offset_top = -32.2189
+offset_right = 254.053
+offset_bottom = -9.21891
+scale = Vector2(0.975508, 1.40197)
+text = "This button will create a grass trap"
+
+[node name="TextureRect" type="TextureRect" parent="EnzoPacManButton"]
+offset_left = -16.0
+offset_top = -5.0
+offset_right = 62.0
+offset_bottom = 50.0
+expand_mode = 2
+
+[node name="EOUIAIOUOUIIIAButton" type="Button" parent="."]
+offset_left = 841.0
+offset_top = 580.0
+offset_right = 901.0
+offset_bottom = 640.0
+
+[node name="TextHover" type="Label" parent="EOUIAIOUOUIIIAButton"]
+visible = false
+layout_mode = 0
+offset_left = 1.05257
+offset_top = -32.2189
+offset_right = 254.053
+offset_bottom = -9.21891
+scale = Vector2(0.975508, 1.40197)
+text = "This button will create a grass trap"
+
+[node name="TextureRect" type="TextureRect" parent="EOUIAIOUOUIIIAButton"]
+offset_left = -16.0
+offset_top = -4.0
+offset_right = 62.0
+offset_bottom = 51.0
+expand_mode = 2
+
+[node name="MeshSelected" type="Node3D" parent="."]
+unique_name_in_owner = true
+visible = false
+
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 unique_name_in_owner = true
 visible = false
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
 unique_name_in_owner = true
-mesh = SubResource("BoxMesh_51axn")
-surface_material_override/0 = SubResource("StandardMaterial3D_c8qg8")

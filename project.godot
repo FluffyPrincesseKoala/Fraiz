@@ -25,6 +25,11 @@ GlobalGameState="*res://GlobalGameState.gd"
 folder_colors={
 "res://animations/": "yellow"
 }
+
+[filesystem]
+
+import/fbx/enabled=false
+
 [input]
 
 rotate_trap={
