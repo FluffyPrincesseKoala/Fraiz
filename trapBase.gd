@@ -9,7 +9,8 @@ extends Node3D
 @export var activation_radius: float = 5.0
 
 # Shader
-@export var trap_color: Color = Color(1, 0, 0)  # Default white
+@export var trap_color: Color = Color(1, 0, 0)  # Default red
+@export var deactivated_trap_color: Color = Color(1, 1, 1)  # Default red
 @onready var mesh_instance: MeshInstance3D = $baseZone  # Adjust path if needed
 
 @export var activationType: String = "none" # trigger or continue
@@ -20,8 +21,9 @@ func rotate_trap():
 	rotation_degrees.y = wrapf(rotation_degrees.y, 0, 360)
 
 # Méthodes génériques
-func activate_trap():
+func activate_trap(body):
 	print("Trap activated!")
+	set_trap_color(deactivated_trap_color)
 	# Surchargé par les enfants pour définir le comportement
 
 func deactivate_trap():
@@ -31,17 +33,8 @@ func deactivate_trap():
 func reset_trap():
 	is_ready = true
 
-func on_trigger(body):
-	if is_ready:
-		activate_trap()
-		is_ready = false
-		$Timer.start(cooldown_time)
-
 func _ready():
-	if not is_static:
-		print("Error: StaticTrap must be static!")
 	set_trap_color(trap_color)
-	print(mesh_instance.material_override)
 	
 func set_trap_color(color: Color):
 	trap_color = color

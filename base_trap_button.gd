@@ -3,6 +3,7 @@ class_name  BaseTrapButton
 
 var parent: TrapGameUI
 @export var trap_id: int = 0 
+var last_trap_id = trap_id 
 @export var trap_model: PackedScene
 @export var price: int = 0
 
@@ -25,12 +26,22 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if last_trap_id != trap_id:
+		last_trap_id = trap_id
+		var rota = %MeshSelected.global_rotation
+		rota.y = 0
+		%MeshSelected.global_rotation = rota
+		GlobalVariable.trapSelectedRotation = rota
+		
 	if (is_hovered() == true):
 		$TextHover.visible = true
 	else:
 		$TextHover.visible = false
 	if (GlobalVariable.trapSelected == trap_id):
 		set_posTrap()
+	if Input.is_action_just_pressed("rotate_trap"):
+		%MeshSelected.rotate_y(90)
+		#GlobalVariable.trapSelectedRotation =  %MeshSelected.global_rotation
 
 func _pressed():
 	GlobalVariable.trapSelected = trap_id

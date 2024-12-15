@@ -1,7 +1,7 @@
 extends Node
 
 @export var available_traps: Array
-@export var number_of_coin: int = 10;
+@export var number_of_coin: int = 1000;
 
 enum GameState {
 	STARTED,
