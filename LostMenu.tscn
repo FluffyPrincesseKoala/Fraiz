@@ -21,6 +21,7 @@ grow_vertical = 2
 scale = Vector2(1.635, 1.635)
 
 [node name="Label2" type="Label" parent="."]
+layout_mode = 0
 offset_left = 264.0
 offset_top = 155.0
 offset_right = 925.0
@@ -29,6 +30,7 @@ text = "You lost"
 label_settings = SubResource("LabelSettings_f1hfo")
 
 [node name="RetryButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 485.0
 offset_top = 365.0
 offset_right = 645.0
@@ -37,6 +39,7 @@ text = "Retry ?"
 script = ExtResource("2_wl0li")
 
 [node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 485.0
 offset_top = 452.0
 offset_right = 645.0

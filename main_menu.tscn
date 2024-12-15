@@ -38,6 +38,7 @@ text = "PLAY"
 script = ExtResource("2_2wcc0")
 
 [node name="QuitButton" type="Button" parent="."]
+layout_mode = 0
 offset_left = 488.0
 offset_top = 380.0
 offset_right = 648.0
