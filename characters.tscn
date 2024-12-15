@@ -13,6 +13,7 @@ material = SubResource("StandardMaterial3D_3344r")
 [node name="Node3D" type="Node3D"]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+collision_mask = 0
 script = ExtResource("1_k3erl")
 metadata/TargetPosition = Vector3(0, 0, 0)
 

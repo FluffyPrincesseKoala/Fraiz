@@ -23,7 +23,7 @@ shape = SubResource("BoxShape3D_bpaht")
 mesh = SubResource("CylinderMesh_fi8t8")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 5.0
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

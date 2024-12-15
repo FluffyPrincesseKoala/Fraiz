@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name CharacterMain
 
 signal character_death
 
@@ -25,7 +26,8 @@ enum DodgeDirection {
 var has_win = false
 
 @onready var nav: NavigationAgent3D = $NavigationAgent3D;
-@export var marker: Node3D
+@export var marker: Node3D = null
+
 
 func receive_dammage(amount: int):
 	HP -= amount;
